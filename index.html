@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Putri Puspitasari | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ffd6e7;
+    --peach: #ffe3d1;
+    --yellow: #fff3c4;
+    --mint: #d4f5e4;
+    --sky: #d3ebff;
+    --lilac: #e6dcff;
+    --ink: #4a4560;
+    --ink-soft: #7d7894;
+    --white: #ffffff;
+    --accent: #ff9ec4;
+    --accent-2: #a98bff;
+    --radius: 24px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 10% 10%, var(--pink) 0, transparent 35%),
+      radial-gradient(circle at 90% 20%, var(--sky) 0, transparent 35%),
+      radial-gradient(circle at 80% 80%, var(--lilac) 0, transparent 35%),
+      radial-gradient(circle at 15% 85%, var(--mint) 0, transparent 35%),
+      #fffaf5;
+    background-attachment: fixed;
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: 'Fredoka', sans-serif; font-weight: 600; }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 14px; z-index: 50;
+    margin: 14px auto 0; max-width: 760px;
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(10px);
+    border-radius: 999px;
+    padding: 10px 14px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 8px 30px rgba(169,139,255,.18);
+  }
+  nav .logo { font-family: 'Fredoka'; font-weight: 600; padding-left: 12px; }
+  nav ul { list-style: none; display: flex; gap: 4px; }
+  nav ul a {
+    padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: .92rem;
+    transition: background .25s;
+  }
+  nav ul a:hover { background: var(--pink); }
+
+  /* HERO */
+  .hero { padding: 90px 0 60px; text-align: center; position: relative; }
+  
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+  border: 3px solid white;
+}
+
+
+  @keyframes float { 50% { transform: translateY(-10px); } }
+  .tag {
+    display: inline-block; background: var(--yellow);
+    padding: 6px 18px; border-radius: 999px; font-weight: 700; font-size: .9rem;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); line-height: 1.15; margin-bottom: 14px; }
+  .hero h1 span {
+    background: linear-gradient(90deg, #ff8fbf, #a98bff, #6cc3ff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { max-width: 560px; margin: 0 auto 30px; color: var(--ink-soft); font-size: 1.08rem; }
+  .btn {
+    display: inline-block; padding: 13px 28px; border-radius: 999px;
+    font-weight: 700; transition: transform .25s, box-shadow .25s;
+  }
+  .btn:hover { transform: translateY(-3px); }
+  .btn-primary { background: linear-gradient(135deg, #ff9ec4, #b59bff); color: #fff; box-shadow: 0 10px 24px rgba(181,155,255,.4); }
+  .btn-ghost { background: var(--white); margin-left: 8px; box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+
+  /* SECTIONS */
+  section { padding: 70px 0; }
+  .section-title { text-align: center; margin-bottom: 44px; }
+  .section-title h2 { font-size: 2.2rem; }
+  .section-title p { color: var(--ink-soft); }
+  .section-title .dot {
+    display: inline-block; width: 56px; height: 8px; border-radius: 99px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), #6cc3ff);
+    margin-top: 10px;
+  }
+
+  /* ABOUT */
+  .about {
+    background: rgba(255,255,255,.7); border-radius: 36px; padding: 40px;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: center;
+    box-shadow: 0 10px 40px rgba(169,139,255,.12);
+  }
+  .about p + p { margin-top: 14px; }
+  .facts { display: grid; gap: 12px; }
+  .fact { padding: 16px 20px; border-radius: 18px; font-weight: 700; }
+  .fact small { display: block; font-weight: 600; color: var(--ink-soft); }
+  .fact:nth-child(1) { background: var(--pink); }
+  .fact:nth-child(2) { background: var(--mint); }
+  .fact:nth-child(3) { background: var(--sky); }
+
+  /* SKILLS */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+  .skill {
+    border-radius: var(--radius); padding: 28px; text-align: center;
+    transition: transform .3s;
+  }
+  .skill:hover { transform: translateY(-6px) rotate(-1deg); }
+  .skill .emoji { font-size: 2.4rem; display: block; margin-bottom: 8px; }
+  .skill h3 { margin-bottom: 6px; }
+  .skill p { font-size: .93rem; color: var(--ink-soft); }
+  .skill:nth-child(1) { background: var(--pink); }
+  .skill:nth-child(2) { background: var(--yellow); }
+  .skill:nth-child(3) { background: var(--mint); }
+  .skill:nth-child(4) { background: var(--sky); }
+
+  .bars { margin-top: 40px; display: grid; gap: 16px; max-width: 640px; margin-inline: auto; }
+  .bar-label { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; }
+  .bar { height: 14px; background: rgba(255,255,255,.9); border-radius: 99px; overflow: hidden; }
+  .bar i { display: block; height: 100%; border-radius: 99px; }
+  .bar i.b1 { width: 90%; background: linear-gradient(90deg, #ffb3d1, #ff8fbf); }
+  .bar i.b2 { width: 80%; background: linear-gradient(90deg, #ffe08a, #ffc66b); }
+  .bar i.b3 { width: 85%; background: linear-gradient(90deg, #a6ecc8, #6fd9a5); }
+  .bar i.b4 { width: 75%; background: linear-gradient(90deg, #a9d8ff, #78bdfc); }
+
+  /* PROJECTS */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 26px; }
+  .card {
+    background: var(--white); border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 10px 30px rgba(74,69,96,.08); transition: transform .3s, box-shadow .3s;
+  }
+  .card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(169,139,255,.25); }
+  .thumb { height: 170px; display: grid; place-items: center; font-size: 3.4rem; }
+  .card:nth-child(1) .thumb { background: linear-gradient(135deg, var(--pink), var(--peach)); }
+  .card:nth-child(2) .thumb { background: linear-gradient(135deg, var(--sky), var(--lilac)); }
+  .card:nth-child(3) .thumb { background: linear-gradient(135deg, var(--mint), var(--yellow)); }
+  .card-body { padding: 22px 24px 26px; }
+  .card-body h3 { font-size: 1.25rem; margin-bottom: 6px; }
+  .card-body p { color: var(--ink-soft); font-size: .95rem; margin-bottom: 14px; }
+  .chips span {
+    display: inline-block; font-size: .78rem; font-weight: 700;
+    padding: 4px 12px; border-radius: 99px; margin: 0 4px 4px 0; background: var(--lilac);
+  }
+
+  /* TIMELINE */
+  .timeline { max-width: 680px; margin: 0 auto; border-left: 4px dashed var(--lilac); padding-left: 28px; }
+  .item { position: relative; margin-bottom: 28px; background: rgba(255,255,255,.8); padding: 20px 24px; border-radius: 20px; }
+  .item::before {
+    content: ""; position: absolute; left: -43px; top: 24px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); border: 4px solid #fff;
+  }
+  .item:nth-child(2)::before { background: var(--accent-2); }
+  .item:nth-child(3)::before { background: #6cc3ff; }
+  .item .year { font-weight: 700; color: var(--accent-2); font-size: .9rem; }
+  .item h3 { font-size: 1.1rem; }
+  .item p { color: var(--ink-soft); font-size: .94rem; }
+
+  /* CONTACT */
+  .contact {
+    background: linear-gradient(135deg, var(--pink), var(--lilac) 55%, var(--sky));
+    border-radius: 40px; padding: 56px 30px; text-align: center;
+  }
+  .contact h2 { font-size: 2.2rem; margin-bottom: 10px; }
+  .contact p { max-width: 480px; margin: 0 auto 26px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .links a {
+    background: rgba(255,255,255,.85); padding: 12px 24px; border-radius: 99px;
+    font-weight: 700; transition: transform .25s;
+  }
+  .links a:hover { transform: translateY(-3px); }
+
+  footer { text-align: center; padding: 40px 0 50px; color: var(--ink-soft); font-size: .92rem; }
+
+  @media (max-width: 760px) {
+    .about { grid-template-columns: 1fr; padding: 28px; }
+    nav ul a { padding: 8px 10px; font-size: .82rem; }
+    nav .logo { display: none; }
+    nav { justify-content: center; }
+    .btn-ghost { margin: 10px 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">Putri ✿</span>
+  <ul>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#keahlian">Keahlian</a></li>
+    <li><a href="#karya">Karya</a></li>
+    <li><a href="#perjalanan">Perjalanan</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    
+<img src="image/putri.jpg" alt="Foto Putri Puspitasari" class="avatar">
+
+    <span class="tag">✨ Selamat datang di portofolio saya</span>
+    <h1>Halo, saya <span>Putri Puspitasari</span></h1>
+    <p>Kreator digital yang suka mengubah ide menjadi karya yang rapi, hangat, dan penuh warna.</p>
+    <a href="#karya" class="btn btn-primary">Lihat Karya</a>
+    <a href="#kontak" class="btn btn-ghost">Hubungi Saya</a>
+  </div>
+</header>
+
+<section id="tentang">
+  <div class="container">
+    <div class="section-title">
+      <h2>Tentang Saya</h2>
+      <span class="dot"></span>
+    </div>
+    <div class="about">
+      <div>
+        <p>Saya Putri Puspitasari, seseorang yang senang belajar hal baru dan berkolaborasi dengan banyak orang. Saya percaya karya yang baik lahir dari ketelitian, rasa ingin tahu, dan sedikit sentuhan warna.</p>
+        <p>Dalam setiap proyek, saya berusaha memberikan hasil yang bukan hanya fungsional, tetapi juga nyaman dilihat dan menyenangkan digunakan.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><small>Fokus</small>Kreativitas &amp; Detail</div>
+        <div class="fact"><small>Sifat</small>Teliti &amp; Suka Berkolaborasi</div>
+        <div class="fact"><small>Motivasi</small>Terus Belajar &amp; Bertumbuh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="keahlian">
+  <div class="container">
+    <div class="section-title">
+      <h2>Keahlian</h2>
+      <p>Hal-hal yang saya kuasai dan terus saya asah</p>
+      <span class="dot"></span>
+    </div>
+    <div class="skills">
+      <div class="skill"><span class="emoji">🎨</span><h3>Desain Visual</h3><p>Poster, media sosial, dan identitas visual.</p></div>
+      <div class="skill"><span class="emoji">💻</span><h3>Web Dasar</h3><p>HTML, CSS, dan tampilan yang responsif.</p></div>
+      <div class="skill"><span class="emoji">✍️</span><h3>Penulisan</h3><p>Konten yang jelas, ringan, dan menarik.</p></div>
+      <div class="skill"><span class="emoji">🤝</span><h3>Kerja Tim</h3><p>Komunikasi baik dan mudah beradaptasi.</p></div>
+    </div>
+    <div class="bars">
+      <div><div class="bar-label"><span>Desain</span><span>90%</span></div><div class="bar"><i class="b1"></i></div></div>
+      <div><div class="bar-label"><span>Kreativitas</span><span>80%</span></div><div class="bar"><i class="b2"></i></div></div>
+      <div><div class="bar-label"><span>Komunikasi</span><span>85%</span></div><div class="bar"><i class="b3"></i></div></div>
+      <div><div class="bar-label"><span>Teknologi</span><span>75%</span></div><div class="bar"><i class="b4"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="karya">
+  <div class="container">
+    <div class="section-title">
+      <h2>Karya Pilihan</h2>
+      <p>Beberapa proyek yang saya banggakan</p>
+      <span class="dot"></span>
+    </div>
+    <div class="projects">
+      <article class="card">
+        <div class="thumb">🌸</div>
+        <div class="card-body">
+          <h3>Proyek Satu</h3>
+          <p>Deskripsi singkat proyek: tujuan, peran kamu, dan hasil yang dicapai.</p>
+          <div class="chips"><span>Desain</span><span>Branding</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb">🦋</div>
+        <div class="card-body">
+          <h3>Proyek Dua</h3>
+          <p>Deskripsi singkat proyek: tujuan, peran kamu, dan hasil yang dicapai.</p>
+          <div class="chips"><span>Website</span><span>UI</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb">🍃</div>
+        <div class="card-body">
+          <h3>Proyek Tiga</h3>
+          <p>Deskripsi singkat proyek: tujuan, peran kamu, dan hasil yang dicapai.</p>
+          <div class="chips"><span>Konten</span><span>Kampanye</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="perjalanan">
+  <div class="container">
+    <div class="section-title">
+      <h2>Perjalanan Saya</h2>
+      <span class="dot"></span>
+    </div>
+    <div class="timeline">
+      <div class="item"><span class="year">2024 – Sekarang</span><h3>Posisi / Kegiatan Terbaru</h3><p>Tulis pengalaman kerja, magang, atau organisasi kamu di sini.</p></div>
+      <div class="item"><span class="year">2022 – 2024</span><h3>Pengalaman Sebelumnya</h3><p>Ceritakan tanggung jawab dan pencapaian utama kamu.</p></div>
+      <div class="item"><span class="year">2019 – 2022</span><h3>Pendidikan</h3><p>Tulis nama sekolah atau kampus dan jurusan kamu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="container">
+    <div class="contact">
+      <h2>Yuk, Berkolaborasi! 💌</h2>
+      <p>Punya ide atau proyek menarik? Jangan ragu untuk menyapa saya.</p>
+      <div class="links">
+        <a href="mailto:email@contoh.com">✉️ Email</a>
+        <a href="#">📷 Instagram</a>
+        <a href="#">💼 LinkedIn</a>
+        <a href="#">🐙 GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Putri Puspitasari. Dibuat dengan ♡ dan warna-warna lembut.
+</footer>
+
+</body>
+</html>
